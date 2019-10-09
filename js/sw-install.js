@@ -1,11 +1,10 @@
 window.onload = function(){
     'use strict'
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js')
-    }
+    const btnAdd = document.getElementById("sw")
     /* Trigger when app install successful */
     window.addEventListener('appinstalled', function(evt){
         document.getElementById("mobile_number").value = 9
+        btnAdd.style.display = 'none'
     })
 
     let deferredPrompt
@@ -13,10 +12,9 @@ window.onload = function(){
     window.addEventListener('beforeinstallprompt', function(e){
         // Stash the event so it can be triggered later.
         deferredPrompt = e
-        document.getElementById("mobile_number").value = 999
+        btnAdd.style.display = 'inherit'
     })
 
-    const btnAdd = document.getElementById("sw")
     btnAdd.addEventListener('click', function(e){
         btnAdd.style.display = 'none'
         // Show the prompt
@@ -34,4 +32,7 @@ window.onload = function(){
             btnAdd.style.display = 'inherit'
         })
     })
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+    }
 }
