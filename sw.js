@@ -1,6 +1,6 @@
 /* Start the service worker and cache all of the app's content */
 window.addEventListener('install', function(e) {
-    const cacheName = 'whatsapp-direct-1'
+    const cacheName = 'whatsapp-direct'
     const filesToCache = [
         'index.html',
         'css/style.css',
@@ -21,17 +21,4 @@ window.addEventListener('fetch', function(e) {
             return response || fetch(e.request)
         })
     )
-})
-
-/* Trigger when app install successful */
-window.addEventListener('appinstalled', (evt) => {
-    document.getElementById("mobile_number").value = 9
-})
-
-let deferredPrompt
-
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Stash the event so it can be triggered later.
-    deferredPrompt = e
-    document.getElementById("mobile_number").value = 999
 })
