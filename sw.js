@@ -2,7 +2,8 @@ var cacheName = 'whatsapp-direct'
 var filesToCache = [
     'index.html',
     'css/style.css',
-    'js/sw-install.js'
+    'js/sw-install.js',
+    'js/index.js',
 ]
 
 /* Start the service worker and cache all of the app's content */
