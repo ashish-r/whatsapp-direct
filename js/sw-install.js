@@ -11,7 +11,7 @@ window.onload = function(){
 
     window.addEventListener('beforeinstallprompt', function(e){
         // Stash the event so it can be triggered later.
-        e.preventDefault();
+        e.preventDefault()
         deferredPrompt = e
         btnAdd.style.display = 'inherit'
     })
