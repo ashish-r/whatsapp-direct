@@ -1,6 +1,6 @@
 /* Start the service worker and cache all of the app's content */
 window.addEventListener('install', function(e) {
-    const cacheName = 'whatsapp-direct'
+    const cacheName = 'whatsapp-direct-1'
     const filesToCache = [
         'index.html',
         'css/style.css',
