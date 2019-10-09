@@ -3,7 +3,6 @@ window.onload = function(){
     const btnAdd = document.getElementById("sw")
     /* Trigger when app install successful */
     window.addEventListener('appinstalled', function(evt){
-        document.getElementById("mobile_number").value = 9
         btnAdd.style.display = 'none'
     })
 
