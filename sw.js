@@ -1,5 +1,5 @@
 /* Start the service worker and cache all of the app's content */
-window.addEventListener('install', function(e) {
+self.addEventListener('install', function(e) {
     const cacheName = 'whatsapp-direct'
     const filesToCache = [
         'index.html',
@@ -15,7 +15,7 @@ window.addEventListener('install', function(e) {
 })
 
 /* Serve cached content when offline */
-window.addEventListener('fetch', function(e) {
+self.addEventListener('fetch', function(e) {
     e.respondWith(
         caches.match(e.request).then(function(response) {
             return response || fetch(e.request)
