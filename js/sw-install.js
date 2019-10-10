@@ -27,5 +27,19 @@ window.onload = function(){
     })
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js')
+        .then(function(registration) {
+            registration.addEventListener("updatefound", function() {
+                if (navigator.serviceWorker.controller) {
+                  var installingSW = registration.installing
+                  installingSW.onstatechange = function() {
+                    switch(installingSW.state) {
+                        case 'installed':
+                            btnReload.style.display = 'inherit'
+                            break
+                    }
+                  }
+                }
+            })
+        })
     }
 }
