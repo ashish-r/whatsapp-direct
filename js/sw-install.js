@@ -16,7 +16,7 @@ window.onload = function(){
     window.addEventListener('beforeinstallprompt', function(e){
         e.preventDefault()
         showToast('Click to add WhatsApp Direct! to home screen')
-        toastElement.addEventListener('click', function(e){
+        toastElement.addEventListener('click', function(){
             hideToast()
             e.prompt()
             // Wait for the user to respond to the prompt
