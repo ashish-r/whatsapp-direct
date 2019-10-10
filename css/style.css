@@ -12,12 +12,12 @@ body, html {
 a {
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
 	margin: 0px;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
+  text-decoration: none;
 }
 
 a:focus {
@@ -26,7 +26,6 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #1b3815;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -269,6 +268,7 @@ button:hover {
 }
 
 .credit-text--name{
+  font-size: 10px;
   color: #26D367;
   text-transform: uppercase;
 }

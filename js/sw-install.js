@@ -18,7 +18,7 @@ window.onload = function(){
         showToast('Click to add WhatsApp Direct! to home screen')
         toastElement.addEventListener('click', function(e){
             hideToast()
-            e.prompt();
+            e.prompt()
             // Wait for the user to respond to the prompt
             e.userChoice
             .then(function(choiceResult){
@@ -42,6 +42,7 @@ window.onload = function(){
                         case 'installed':
                             showToast('Update available. Click to reload.')
                             toastElement.addEventListener('click', function(){
+                                hideToast()
                                 window.location.reload()
                             })
                             break
