@@ -1,18 +1,30 @@
 (function(){
     const mobileErrorElement = document.getElementById('mobile-error')
-    document.getElementById('mobile_number').addEventListener('focus', function(){
+    const countryCodeElement = document.getElementById('country_code')
+    const mobileNumberElement = document.getElementById('mobile_number')
+    let currentCountryCode
+    countryCodeElement.addEventListener('focus', function(){
+        currentCountryCode = countryCodeElement.value
+    })
+    countryCodeElement.addEventListener('blur', function(){
+        if(!countryCodeElement.value){
+            countryCodeElement.value = currentCountryCode
+        }
+    })
+    mobileNumberElement.addEventListener('focus', function(){
         mobileErrorElement.innerText = ''
     })
     document.getElementById('start_whatsapp').addEventListener('click', function(){
-        const mobileNumber = document.getElementById('mobile_number').value
+        const mobileNumber = mobileNumberElement.value
         if(!mobileNumber){
             return mobileErrorElement.innerText = 'Mobile number is mandatory'
         }
         const filteredNumber = +mobileNumber.replace(/\D/g, '')
-        if(!filteredNumber){
-            return mobileErrorElement.innerText = 'Provide valid mobile number'
+        const filteredCountryCode = +countryCodeElement.value.replace(/\D/g, '')
+        if(!filteredNumber || !filteredCountryCode){
+            return mobileErrorElement.innerText = `Provide valid ${!filteredNumber ? 'mobile number' : 'country code'}`
         }
         const textMessage = encodeURI(document.getElementById('text_message').value || '')
-        window.location.href=`https://wa.me/91${filteredNumber}?text=${textMessage}`
+        window.location.href=`https://wa.me/${filteredCountryCode}${filteredNumber}?text=${textMessage}`
     })
 })()

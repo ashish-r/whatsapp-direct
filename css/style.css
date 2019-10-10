@@ -1,6 +1,3 @@
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
-
 * {
 	margin: 0px; 
 	padding: 0px; 
@@ -11,8 +8,6 @@ body, html {
 	height: 100%;
 	font-family: Ubuntu-Regular, sans-serif;
 }
-
-/*---------------------------------------------*/
 a {
 	font-family: Ubuntu-Regular;
 	font-size: 14px;
@@ -34,7 +29,6 @@ a:hover {
   color: #1b3815;
 }
 
-/*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
@@ -52,8 +46,6 @@ ul, li {
 	list-style-type: none;
 }
 
-
-/*---------------------------------------------*/
 input {
 	outline: none;
 	border: none;
@@ -198,6 +190,8 @@ button:hover {
   position: relative;
   z-index: 1;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .input-field {
@@ -213,9 +207,24 @@ button:hover {
   border-radius: 27px;
   padding: 0 35px;
 }
-textarea.input-field{
+.input-field-sep{
+  border-left: 1px solid #999999;
+}
+.input-field--message{
   height: 105px;
-  padding: 10px 35px;
+  padding: 15px 35px;
+}
+.input-field--code{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  flex: 1;
+  padding-right: 5px;
+}
+.input-field--mobile{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  flex: 5;
+  padding-left: 10px;
 }
 .input-error {
   font-family: Ubuntu-Bold;
@@ -223,7 +232,7 @@ textarea.input-field{
   font-size: 13px;
   line-height: 1.4;
   position: absolute;
-  left: 10px;
+  bottom: -18px;
 }
 
 /*------------------------------------------------------------------

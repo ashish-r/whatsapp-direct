@@ -35,11 +35,13 @@
 				<div class="form-wrapper">
 					<span class="title">WhatsApp Direct!</span>
 					<div class="input-wrapper">
-						<input class="input-field" type="tel" id="mobile_number" name="mobile_number" placeholder="Mobile number">
+						<input class="input-field input-field--code" type="text" id="country_code" name="country_code" placeholder="Code" value="+91">
+						<div class="input-field-sep"></div>
+						<input class="input-field input-field--mobile" type="tel" id="mobile_number" name="mobile_number" placeholder="Mobile number">
 						<span class="input-error" id="mobile-error"></span>
 					</div>
 					<div class="input-wrapper">
-						<textarea rows="4" id="text_message" tabindex="1" class="input-field"></textarea>
+						<textarea rows="4" id="text_message" tabindex="1" class="input-field input-field--message"></textarea>
 					</div>
 					<div class="btn-container">
 						<button class="chat-btn" id="start_whatsapp">
@@ -51,7 +53,7 @@
 							Chat directly without saving contact!
 						</span>
 						<a href="#" class="txt3">
-							Sign up now
+							Share / Star
 						</a>
 					</div>
 				</div>
