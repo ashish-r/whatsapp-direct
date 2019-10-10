@@ -10,8 +10,6 @@ body, html {
 }
 
 a {
-	font-size: 14px;
-	line-height: 1.7;
 	margin: 0px;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -28,36 +26,9 @@ a:hover {
 	text-decoration: none;
 }
 
-h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
-}
-
-p {
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-}
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
-}
-
-input {
+input, textarea {
 	outline: none;
 	border: none;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
 }
 
 textarea {
@@ -68,16 +39,6 @@ textarea {
 textarea:focus, input:focus {
   border-color: transparent !important;
 }
-
-input::-webkit-input-placeholder { color: #1b3815;}
-input:-moz-placeholder { color: #1b3815;}
-input::-moz-placeholder { color: #1b3815;}
-input:-ms-input-placeholder { color: #1b3815;}
-
-textarea::-webkit-input-placeholder { color: #1b3815;}
-textarea:-moz-placeholder { color: #1b3815;}
-textarea::-moz-placeholder { color: #1b3815;}
-textarea:-ms-input-placeholder { color: #1b3815;}
 
 button {
 	outline: none !important;
@@ -176,6 +137,11 @@ button:hover {
   border-radius: 27px;
   padding: 0 35px;
 }
+.input-field::-webkit-input-placeholder { color: #1b3815;}
+.input-field:-moz-placeholder { color: #1b3815;}
+.input-field::-moz-placeholder { color: #1b3815;}
+.input-field:-ms-input-placeholder { color: #1b3815;}
+
 .input-field-sep{
   border-left: 1px solid #999999;
 }
@@ -260,7 +226,7 @@ button:hover {
 }
 .credit-container{
   position: fixed;
-  bottom: 2px;
+  bottom: 5px;
   width: 100%;
   text-align: center;
   font-size: 9px;
