@@ -1,5 +1,6 @@
 # whatsapp-direct
-A simple utility app that lets you send WhatsApp message to people without adding them to the contact list.
+A simple utility app that lets you send WhatsApp message to people without adding them to the contact list. 
+Demo: http://ashish-r.github.io/whatsapp-direct
 
 # tech
 Vanilla JS  PWA.
