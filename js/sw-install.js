@@ -1,27 +1,33 @@
 window.onload = function(){
     'use strict'
-    const btnAdd = document.getElementById('sw_add')
-    const btnReload = document.getElementById('sw_reload')
+    const toastElement = document.getElementById('snackbar')
+    function showToast(toastMessage){
+        toastElement.innerText = toastMessage
+        toastElement.className = 'show'
+    }
+    function hideToast(){
+        toastElement.className = ''
+    }
     /* Trigger when app install successful */
     window.addEventListener('appinstalled', function(evt){
-        btnAdd.style.display = 'none'
+        hideToast()
     })
 
     window.addEventListener('beforeinstallprompt', function(e){
         e.preventDefault()
-        btnAdd.style.display = 'inherit'
-        btnAdd.addEventListener('click', function(e){
-            btnAdd.style.display = 'none'
+        showToast('Click to add WhatsApp Direct! to home screen')
+        toastElement.addEventListener('click', function(e){
+            hideToast()
             e.prompt();
             // Wait for the user to respond to the prompt
             e.userChoice
             .then(function(choiceResult){
                 if (choiceResult.outcome !== 'accepted') {
-                    btnAdd.style.display = 'inherit'
+                    showToast('Click to add WhatsApp Direct! to home screen')
                 }
             })
             .catch(function(choiceResult){
-                btnAdd.style.display = 'inherit'
+                showToast('Click to add WhatsApp Direct! to home screen')
             })
         })
     })
@@ -34,8 +40,8 @@ window.onload = function(){
                   installingSW.onstatechange = function() {
                     switch(installingSW.state) {
                         case 'installed':
-                            btnReload.style.display = 'inherit'
-                            btnReload.addEventListener('click', function(){
+                            showToast('Update available. Click to reload.')
+                            toastElement.addEventListener('click', function(){
                                 window.location.reload()
                             })
                             break

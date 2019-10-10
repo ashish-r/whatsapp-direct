@@ -283,6 +283,38 @@ button:hover {
   text-transform: uppercase;
 }
 
+#snackbar {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  font-size: 12px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: -20px; opacity: 0;} 
+  to {bottom: 0px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: -20px; opacity: 0;} 
+  to {bottom: 0px; opacity: 1;}
+}
+
 @media (max-width: 576px) {
   .form-wrapper {
     padding-left: 15px;
