@@ -1,11 +1,11 @@
-const CACHE_NAME = 'whatsapp-direct-v7'
+const CACHE_NAME = 'whatsapp-direct-v8'
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
     const filesToCache = [
-        'index.html',
-        'css/style.css',
-        'js/sw-install.js',
-        'js/index.js',
+        'index.html?v=8',
+        'css/style.css?v=8',
+        'js/sw-install.js?v=8',
+        'js/index.js?v=8',
     ]
     e.waitUntil(
         caches.open(CACHE_NAME)
