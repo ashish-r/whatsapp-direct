@@ -8,8 +8,12 @@ self.addEventListener('install', function(e) {
         'js/index.js',
     ]
     e.waitUntil(
-        caches.open(CACHE_NAME).then(function(cache) {
+        caches.open(CACHE_NAME)
+        .then(function(cache) {
             return cache.addAll(filesToCache)
+        })
+        .then(function() {
+            return self.skipWaiting()
         })
     )
 })

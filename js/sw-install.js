@@ -33,6 +33,6 @@ window.onload = function(){
         })
     })
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js?v=5')
+        navigator.serviceWorker.register('./sw.js')
     }
 }
