@@ -30,15 +30,19 @@ self.addEventListener('fetch', function(e) {
     )
 })
 
-self.addEventListener('activate', (e) => {
-    var cacheKeeplist = [CACHE_NAME];
+self.addEventListener('activate', function(e){
+    var cacheKeeplist = [CACHE_NAME]
     e.waitUntil(
-      caches.keys().then((keyList) => {
-        return Promise.all(keyList.map((key) => {
-          if (cacheKeeplist.indexOf(key) === -1) {
-            return caches.delete(key);
-          }
-        }))
-      })
+        caches.keys()
+        .then(function(keyList){
+            return Promise.all(keyList.map(function(key){
+                if (cacheKeeplist.indexOf(key) === -1) {
+                    return caches.delete(key);
+                }
+            }))
+        })
+        .then(function () {
+            return self.clients.claim(); 
+        }) 
     )
   })
