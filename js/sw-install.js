@@ -1,7 +1,7 @@
 window.onload = function(){
     'use strict'
-    const btnAdd = document.getElementById("sw_add")
-    const btnReload = document.getElementById("sw_reload")
+    const btnAdd = document.getElementById('sw_add')
+    const btnReload = document.getElementById('sw_reload')
     /* Trigger when app install successful */
     window.addEventListener('appinstalled', function(evt){
         btnAdd.style.display = 'none'
@@ -28,7 +28,7 @@ window.onload = function(){
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js')
         .then(function(registration) {
-            registration.addEventListener("updatefound", function() {
+            registration.addEventListener('updatefound', function() {
                 if (navigator.serviceWorker.controller) {
                   var installingSW = registration.installing
                   installingSW.onstatechange = function() {
