@@ -1,4 +1,4 @@
-const CACHE_NAME = 'whatsapp-direct-v2'
+const CACHE_NAME = 'whatsapp-direct-v4'
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
     const filesToCache = [
