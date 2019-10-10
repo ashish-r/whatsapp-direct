@@ -1,45 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="keywords" content="WhatsApp, WhatsApp Direct, WhatsApp PWA, Direct WhatsApp, JavaScript, PWA">
-  <meta name="description" content="Send messages on WhatsApp without saving numbers">
-  <meta name="author" content="Ashish Ranjan">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-  <title>WhatsApp Direct!</title>
-  <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/index.js"></script>
-  <script defer src="js/sw-install.js"></script>
+	<meta charset="utf-8">
+	<meta name="keywords" content="WhatsApp, WhatsApp Direct, WhatsApp PWA, Direct WhatsApp, JavaScript, PWA">
+	<meta name="description" content="Send messages on WhatsApp without saving numbers">
+	<meta name="author" content="Ashish Ranjan">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<title>WhatsApp Direct!</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="js/index.js"></script>
+	<script defer src="js/sw-install.js"></script>
 </head>
-<body class="fullscreen">
-  <div class="container">
-    <h1 class="title">WhatsApp Direct update17!</h1>
-    <div class="mobile_input">
-        <input type="tel" tabindex="0" value="" id="mobile_number">
+<body>
+	<div class="fullscreen">
+		<div class="container">
+			<div class="wrapper">
+				<div class="form-wrapper">
+					<span class="title">WhatsaApp Direct!</span>
+					<div class="input-wrapper">
+						<input class="input-field" type="tel" id="mobile_number" name="mobile_number" placeholder="Mobile number">
+						<span class="input-error" style="display:none">Mobile number is mandatory</span>
+					</div>
+					<div class="input-wrapper">
+						<textarea rows="4" id="text_message" tabindex="1" class="input-field"></textarea>
+					</div>
+					<div class="btn-container">
+						<button class="chat-btn">
+							Start Chat
+						</button>
+					</div>
+					<div class="footer">
+						<span class="txt1">
+							Chat directly without saving contact!
+						</span>
+						<a href="#" class="txt3">
+							Sign up now
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
-    <div class="message_area">
-        <textarea rows="4" id="text_message" tabindex="1" style="width: 100%"></textarea>
-    </div>
-    <div id="open_whatsapp">Send</div>
-  </div>
-  <div id="sw_add" style="display: none">add</div>
-  <div id="sw_reload" style="display: none">update reload</div>
 </body>
 </html>
