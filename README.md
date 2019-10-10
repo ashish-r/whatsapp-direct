@@ -1,5 +1,8 @@
 # whatsapp-direct
-Send WhatsApp message without saving contact.
+A simple utility app that lets you send WhatsApp message to people without adding them to the contact list.
+
+# tech
+Vanilla JS  PWA.
 
 ## Screenshots
 
