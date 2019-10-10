@@ -25,7 +25,21 @@
         if(!filteredNumber || !filteredCountryCode){
             return mobileErrorElement.innerText = `Provide valid ${!filteredNumber ? 'mobile number' : 'country code'}`
         }
-        const textMessage = encodeURI(document.getElementById('text_message').value || '')
+        const textMessage = encodeURIComponent(document.getElementById('text_message').value || '')
         window.location.href=`https://wa.me/${filteredCountryCode}${filteredNumber}?text=${textMessage}`
+    })
+    document.getElementById('facebook_share').addEventListener('click', function(){
+        window.open(
+            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&t=${document.title}`,
+            'sharer',
+            'toolbar=0,status=0,width=626,height=436'
+        )
+    })
+    document.getElementById('twitter_share').addEventListener('click', function(){
+        window.open(
+            `https://twitter.com/share?url=${encodeURIComponent(window.location.href)}`,
+            'sharer',
+            'toolbar=0,status=0,width=626,height=436'
+        )
     })
 })()

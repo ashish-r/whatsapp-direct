@@ -263,12 +263,12 @@ button:hover {
   bottom: 2px;
   width: 100%;
   text-align: center;
-  font-size: 10px;
+  font-size: 9px;
   color: #999999;
 }
 
 .credit-text--name{
-  font-size: 10px;
+  font-size: 9px;
   color: #26D367;
   text-transform: uppercase;
 }
@@ -281,6 +281,7 @@ button:hover {
 .info-text--link {
   color: #26D367;
   text-transform: uppercase;
+  font-size: 9px;
 }
 
 #snackbar {
