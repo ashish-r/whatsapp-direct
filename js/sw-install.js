@@ -35,7 +35,7 @@ window.onload = function(){
                     switch(installingSW.state) {
                         case 'installed':
                             btnReload.style.display = 'inherit'
-                            btnReload.addEventListener(function(){
+                            btnReload.addEventListener('click', function(){
                                 window.location.reload()
                             })
                             break
