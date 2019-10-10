@@ -5,6 +5,7 @@
     let currentCountryCode
     countryCodeElement.addEventListener('focus', function(){
         currentCountryCode = countryCodeElement.value
+        mobileErrorElement.innerText = ''
     })
     countryCodeElement.addEventListener('blur', function(){
         if(!countryCodeElement.value){

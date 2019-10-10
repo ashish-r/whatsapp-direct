@@ -6,10 +6,10 @@
 
 body, html {
 	height: 100%;
-	font-family: Ubuntu-Regular, sans-serif;
+	font-family: monospace, sans-serif;
 }
+
 a {
-	font-family: Ubuntu-Regular;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -34,7 +34,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Ubuntu-Regular;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -71,7 +70,6 @@ textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
-
 input::-webkit-input-placeholder { color: #1b3815;}
 input:-moz-placeholder { color: #1b3815;}
 input::-moz-placeholder { color: #1b3815;}
@@ -82,7 +80,6 @@ textarea:-moz-placeholder { color: #1b3815;}
 textarea::-moz-placeholder { color: #1b3815;}
 textarea:-ms-input-placeholder { color: #1b3815;}
 
-/*---------------------------------------------*/
 button {
 	outline: none !important;
 	border: none;
@@ -93,32 +90,7 @@ button:hover {
 	cursor: pointer;
 }
 
-
-/*//////////////////////////////////////////////////////////////////
-[ Utility ]*/
-.txt1 {
-  font-family: Ubuntu-Regular;
-  font-size: 15px;
-  color: #999999;
-  line-height: 1.4;
-}
-
-.txt2 {
-  font-family: Ubuntu-Regular;
-  font-size: 15px;
-  color: #26D367;
-  line-height: 1.4;
-}
-
-.txt3 {
-  font-family: Ubuntu-Bold;
-  font-size: 15px;
-  color: #26D367;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-
+/*//////////////////////////////////////////////////////////////////*/
 
 .fullscreen {
   width: 100%;
@@ -142,7 +114,8 @@ button:hover {
 }
 
 .wrapper {
-  height:90vh;
+  height: auto;
+  min-height:90vh;
   width: 500px;
   background: #fff;
   border-radius: 20px;
@@ -165,8 +138,8 @@ button:hover {
 }
 
 .title {
-  font-family: JosefinSans-Bold;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: bold;
   color: #fff;
   line-height: 1.2;
   text-align: center;
@@ -180,9 +153,6 @@ button:hover {
   padding-bottom: 39px;
 }
 
-/*------------------------------------------------------------------
-[ Input ]*/
-
 .input-wrapper {
   width: 100%;
   background-color: #fff;
@@ -195,7 +165,7 @@ button:hover {
 }
 
 .input-field {
-  font-family: Ubuntu-Bold;
+  font-family: monospace;
   font-size: 15px;
   color: #1b3815;
   line-height: 1.2;
@@ -227,7 +197,6 @@ button:hover {
   padding-left: 10px;
 }
 .input-error {
-  font-family: Ubuntu-Bold;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -235,8 +204,6 @@ button:hover {
   bottom: -18px;
 }
 
-/*------------------------------------------------------------------
-[ Button ]*/
 .btn-container {
   width: 100%;
   display: -webkit-box;
@@ -246,6 +213,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 15px;
 }
 
 .chat-btn {
@@ -261,7 +229,6 @@ button:hover {
   height: 50px;
   background-color: #26D367;
   border-radius: 25px;
-  font-family: Ubuntu-Bold;
   font-size: 15px;
   color: #fff;
   line-height: 1.2;
@@ -270,11 +237,13 @@ button:hover {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+  font-weight: bold;
+  font-family: monospace
 }
 
 .footer {
   position: absolute;
-  bottom: 30px;
+  bottom: 6vh;
   left: 10px;
   right: 10px;
 	display: -webkit-box;
@@ -290,10 +259,38 @@ button:hover {
 	-ms-align-items: center;
 	align-items: center;
 }
+.credit-container{
+  position: fixed;
+  bottom: 2px;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  color: #999999;
+}
+
+.credit-text--name{
+  color: #26D367;
+  text-transform: uppercase;
+}
+
+.info-text {
+  font-size: 12px;
+  color: #999999;
+  padding-bottom: 5px;
+}
+.info-text--link {
+  color: #26D367;
+  text-transform: uppercase;
+}
 
 @media (max-width: 576px) {
   .form-wrapper {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+@media (max-height: 550px) {
+  .credit-container, .footer {
+    display: none
   }
 }
