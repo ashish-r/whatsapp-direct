@@ -1,16 +1,19 @@
-const CACHE_NAME = 'whatsapp-direct-v8'
+const VERSION = '-v9'
+const CACHE_NAME = 'whatsapp-direct' + VERSION
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
     const filesToCache = [
-        'index.html?v=8',
-        'css/style.css?v=8',
-        'js/sw-install.js?v=8',
-        'js/index.js?v=8',
+        'index.html',
+        'css/style.css',
+        'js/sw-install.js',
+        'js/index.js',
     ]
     e.waitUntil(
         caches.open(CACHE_NAME)
         .then(function(cache) {
-            return cache.addAll(filesToCache)
+            return cache.addAll(filesToCache.map(function(file){
+                file + VERSION
+            }))
         })
         .then(function() {
             return self.skipWaiting()
@@ -35,7 +38,7 @@ self.addEventListener('activate', (e) => {
           if (cacheKeeplist.indexOf(key) === -1) {
             return caches.delete(key);
           }
-        }));
+        }))
       })
-    );
-  });
+    )
+  })

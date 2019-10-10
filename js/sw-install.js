@@ -1,6 +1,7 @@
 window.onload = function(){
     'use strict'
-    const btnAdd = document.getElementById("sw")
+    const btnAdd = document.getElementById("sw_add")
+    const btnReload = document.getElementById("sw_reload")
     /* Trigger when app install successful */
     window.addEventListener('appinstalled', function(evt){
         btnAdd.style.display = 'none'
@@ -32,7 +33,23 @@ window.onload = function(){
             btnAdd.style.display = 'inherit'
         })
     })
+    btnReload.addEventListener('click', function(e){
+        window.location.reload()
+    })
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js')
+        .then(reg => {
+            reg.onupdatefound = function(){
+                const installingWorker = reg.installing
+                installingWorker.onstatechange = function(){
+                    switch (installingWorker.state) {
+                        case 'installed':
+                            if (navigator.serviceWorker.controller) {
+                                btnReload.style.display = 'inherit'
+                            break
+                    }
+                };
+            };
+        })
     }
 }
