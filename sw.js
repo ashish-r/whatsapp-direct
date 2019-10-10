@@ -1,4 +1,4 @@
-const FILE_VERSION = '?v13'
+const FILE_VERSION = '?v14'
 const CACHE_NAME = 'whatsapp-direct' + FILE_VERSION
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
