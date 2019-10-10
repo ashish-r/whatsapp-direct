@@ -15,7 +15,7 @@ window.onload = function(){
 
     window.addEventListener('beforeinstallprompt', function(e){
         e.preventDefault()
-        showToast('Click to add WhatsApp Direct! to home screen')
+        showToast('Click this for quick access WhatsApp Direct!')
         toastElement.addEventListener('click', function(){
             hideToast()
             e.prompt()
@@ -23,11 +23,11 @@ window.onload = function(){
             e.userChoice
             .then(function(choiceResult){
                 if (choiceResult.outcome !== 'accepted') {
-                    showToast('Click to add WhatsApp Direct! to home screen')
+                    showToast('Click this for quick access WhatsApp Direct!')
                 }
             })
-            .catch(function(choiceResult){
-                showToast('Click to add WhatsApp Direct! to home screen')
+            .catch(function(){
+                showToast('Click this for quick access WhatsApp Direct!')
             })
         })
     })
@@ -40,7 +40,7 @@ window.onload = function(){
                   installingSW.onstatechange = function() {
                     switch(installingSW.state) {
                         case 'installed':
-                            showToast('Update available. Click to reload.')
+                            showToast('Update available. Click this to reload.')
                             toastElement.addEventListener('click', function(){
                                 hideToast()
                                 window.location.reload()
