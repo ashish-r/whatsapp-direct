@@ -114,7 +114,7 @@ button:hover {
 }
 
 .wrapper {
-  height: auto;
+  z-index: 1;
   min-height:90vh;
   width: 500px;
   background: #fff;
@@ -133,7 +133,7 @@ button:hover {
   position: relative;
   padding-left: 55px;
   padding-right: 55px;
-  padding-top: 178px;
+  padding-top: 170px;
   height: 100%;
 }
 
@@ -213,7 +213,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
 }
 
 .chat-btn {
