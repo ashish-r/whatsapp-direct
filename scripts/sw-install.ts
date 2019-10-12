@@ -2,7 +2,6 @@ import { ServiceWorkerInstallResult, ServiceWorkerEvent } from "./types"
 
 window.onload = function(){
     'use strict'
-    const yolo = 'yolo'
     const toastElement = document.getElementById('snackbar') as HTMLElement
     const showToast = (toastMessage: string) => {
         toastElement.innerText = toastMessage
