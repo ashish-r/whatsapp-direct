@@ -13,7 +13,7 @@ Navigate to the root directory and use: <br/>
 `npm run build` this will transpile all .ts files in a corresponding .js file and then grunt will minify those files.<br/>
 Push updated contents of build directory also Github serves the page from that directory only.
 ## Git Hooks:
-`pre-commit` runs `npm run build` and add updated contents of scripts/build directory automatically while making a commit.
+`pre-commit` runs `npm run build-add` which is similar to `pm run build` and also adds updated contents of scripts/build directory automatically while making a commit.
 
 # Screenshots
 
