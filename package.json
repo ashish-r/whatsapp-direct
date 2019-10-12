@@ -33,6 +33,9 @@
   },
   "dependencies": {},
   "gitHooks": {
-    "pre-commit": "build"
-  }
+    "pre-commit": "pre-commit"
+  },
+  "pre-commit": [
+    "build"
+  ]
 }
