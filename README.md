@@ -5,7 +5,7 @@ Demo: http://ashish-r.github.io/whatsapp-direct
 # Getting Started
 
 Navigate to the root directory and use: <br/>
-## Install Dependencies
+## Installing Dependencies
 `npm install` to install all dependencies.
 ## For Development:
 `npm run serve` this will start typescript transpiler in watch mode, any changes you make in the .ts file will automatically update corresponding .js file in the build directory
