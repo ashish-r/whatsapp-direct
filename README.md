@@ -1,21 +1,21 @@
-## whatsapp-direct
+# whatsapp-direct
 An ultra-lite web app that lets you message/call on Whatsapp to people without adding them to the contact list.
 Demo: http://ashish-r.github.io/whatsapp-direct
 
-## Getting Started
+# Getting Started
 
 Navigate to the root directory and use: <br/>
-# Install Dependencies
+## Install Dependencies
 `npm install` to install all dependencies.
-# For Development:
+## For Development:
 `npm run serve` this will start typescript transpiler in watch mode, any changes you make in the .ts file will automatically update corresponding .js file in the build directory
-# For Production:
+## For Production:
 `npm run build` this will transpile all .ts files in a corresponding .js file and then grunt will minify those files.<br/>
 Push updated contents of build directory also Github serves the page from that directory only.
-# Git Hooks:
+## Git Hooks:
 `pre-commit` runs `npm run build` and add updated contents of scripts/build directory automatically while making a commit.
 
-## Screenshots
+# Screenshots
 
 ![PWA Mobile][PWA Mobile]
 ![PWA Update][PWA Update]
