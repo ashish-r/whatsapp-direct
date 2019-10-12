@@ -1,3 +1,4 @@
+(self as ServiceWorkerGlobalContext)['exports'] = {} // Hack to fix TS exports error
 import { ServiceWorkerEvent, ServiceWorkerGlobalContext } from "./types"
 const FILE_VERSION = '?v201'
 const CACHE_NAME = 'whatsapp-direct' + FILE_VERSION
