@@ -37,6 +37,6 @@
     "pre-commit": "pre-commit"
   },
   "pre-commit": [
-    "build"
+    "build-add"
   ]
 }
