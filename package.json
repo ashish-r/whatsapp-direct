@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "tsc --w",
-    "build": "tsc && grunt uglify:t1 && echo \"TS files transpiled to JS and minified\""
+    "build": "tsc && grunt uglify:t1 && echo \"TS files transpiled to JS and minified\"",
+    "build-add": "tsc && grunt uglify:t1 && git add scripts/build/ && echo \"TS files transpiled to JS, minified and added for commit\""
   },
   "repository": {
     "type": "git",
