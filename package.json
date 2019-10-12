@@ -28,10 +28,11 @@
   "devDependencies": {
     "grunt": "^1.0.4",
     "grunt-contrib-uglify": "^4.0.1",
+    "pre-commit": "^1.2.2",
     "typescript": "^3.6.4"
   },
   "dependencies": {},
   "gitHooks": {
-    "pre-commit": "npm run build"
+    "pre-commit": "build"
   }
 }
