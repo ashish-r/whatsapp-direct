@@ -1,1 +1,27 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var FILE_VERSION="?v201",CACHE_NAME="whatsapp-direct"+FILE_VERSION;self.addEventListener("install",function(e){var t=["index.html","css/style.css","scripts/build/sw-install.js","scripts/build/index.js"];e.waitUntil(caches.open(CACHE_NAME).then(function(e){return e.addAll(t.map(function(e){return e+FILE_VERSION}))}).then(function(){return self.skipWaiting()}))}),self.addEventListener("fetch",function(t){t.respondWith(caches.match(t.request).then(function(e){return e||fetch(t.request)}))}),self.addEventListener("activate",function(e){var t=[CACHE_NAME];e.waitUntil(caches.keys().then(function(e){return Promise.all(e.filter(function(e){return t.includes(e)}).map(function(e){return caches.delete(e)}))}).then(function(){return self.clients.claim()}))});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var FILE_VERSION = '?v201';
+var CACHE_NAME = 'whatsapp-direct' + FILE_VERSION;
+self.addEventListener('install', function (e) {
+    var filesToCache = [
+        'index.html',
+        'css/style.css',
+        'scripts/build/sw-install.js',
+        'scripts/build/index.js',
+    ];
+    e.waitUntil(caches.open(CACHE_NAME)
+        .then(function (cache) { return cache.addAll(filesToCache.map(function (file) { return file + FILE_VERSION; })); })
+        .then(function () { return self.skipWaiting(); }));
+});
+self.addEventListener('fetch', function (e) {
+    e.respondWith(caches.match(e.request)
+        .then(function (response) { return response || fetch(e.request); }));
+});
+self.addEventListener('activate', function (e) {
+    var cacheKeeplist = [CACHE_NAME];
+    e.waitUntil(caches.keys()
+        .then(function (keyList) { return Promise.all(keyList.filter(function (key) { return cacheKeeplist.includes(key); })
+        .map(function (key) { return caches.delete(key); })); })
+        .then(function () { return self.clients.claim(); }));
+});
+//# sourceMappingURL=sw.js.map
