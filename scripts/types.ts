@@ -3,4 +3,3 @@ export type ServiceWorkerEvent = Event & {[key: string]: any}
 export type ServiceWorkerInstallResult = {
     outcome: string
 }
-export type ServiceWorkerGlobalContext = Window & {[key: string]: any}

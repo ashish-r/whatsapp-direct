@@ -8,7 +8,6 @@ module.exports = function(grunt) {
                 files: {
                     'scripts/build/index.js': ['scripts/build/index.js'],
                     'scripts/build/sw-install.js': ['scripts/build/sw-install.js'],
-                    'scripts/build/sw.js': ['scripts/build/sw.js'],
                 }
             }
         }
