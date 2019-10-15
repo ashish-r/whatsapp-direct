@@ -1,14 +1,14 @@
 import { ServiceWorkerEvent, ServiceWorkerGlobalContext } from "./types"
-const FILE_VERSION = '?v203'
+const FILE_VERSION = '?v205'
 const CACHE_NAME = 'whatsapp-direct' + FILE_VERSION
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', (e: ServiceWorkerEvent) => {
     const filesToCache = [
-        'index.html',
-        'css/style.css',
-        'scripts/build/sw-install.js',
-        'scripts/build/index.js',
+        '../../index.html',
+        '../../css/style.css',
+        'sw-install.js',
+        'index.js',
     ]
     e.waitUntil(
         caches.open(CACHE_NAME)
