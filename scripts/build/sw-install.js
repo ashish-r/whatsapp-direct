@@ -23,6 +23,7 @@
             hideToast();
         });
         window.addEventListener('beforeinstallprompt', function (installPrompt) {
+            debugger;
             installPrompt.preventDefault();
             showToast('Click this for quick access WhatsApp Direct!');
             toastElement.addEventListener('click', function () {
@@ -40,6 +41,7 @@
             });
         });
         if ('serviceWorker' in navigator) {
+            debugger;
             navigator.serviceWorker.register('scripts/build/sw.js')
                 .then(function (registration) {
                 registration.addEventListener('updatefound', function () {
