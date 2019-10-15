@@ -1,1 +1,67 @@
-!function(e){if("object"==typeof module&&"object"==typeof module.exports){var t=e(require,exports);void 0!==t&&(module.exports=t)}else"function"==typeof define&&define.amd&&define(["require","exports"],e)}(function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),window.onload=function(){function n(e){o.innerText=e,o.className="show"}function i(){o.className=""}var o=document.getElementById("snackbar");window.addEventListener("appinstalled",function(){i()}),window.addEventListener("beforeinstallprompt",function(e){e.preventDefault(),n("Click this for quick access WhatsApp Direct!"),o.addEventListener("click",function(){i(),e.prompt(),e.userChoice.then(function(e){"accepted"!==e.outcome&&n("Click this for quick access WhatsApp Direct!")}).catch(function(){n("Click this for quick access WhatsApp Direct!")})})}),"serviceWorker"in navigator&&navigator.serviceWorker.register("scripts/build/sw.js").then(function(t){t.addEventListener("updatefound",function(){if(navigator.serviceWorker.controller){var e=t.installing;e&&(e.onstatechange=function(){switch(e.state){case"installed":n("Update available. Click this to reload."),o.addEventListener("click",function(){i(),window.location.reload()})}})}})})}});
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports"], factory);
+    }
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    window.onload = function () {
+        'use strict';
+        var toastElement = document.getElementById('snackbar');
+        var showToast = function (toastMessage) {
+            toastElement.innerText = toastMessage;
+            toastElement.className = 'show';
+        };
+        var hideToast = function () {
+            toastElement.className = '';
+        };
+        window.addEventListener('appinstalled', function () {
+            hideToast();
+        });
+        window.addEventListener('beforeinstallprompt', function (installPrompt) {
+            installPrompt.preventDefault();
+            showToast('Click this for quick access WhatsApp Direct!');
+            toastElement.addEventListener('click', function () {
+                hideToast();
+                installPrompt.prompt();
+                installPrompt.userChoice
+                    .then(function (choiceResult) {
+                    if (choiceResult.outcome !== 'accepted') {
+                        showToast('Click this for quick access WhatsApp Direct!');
+                    }
+                })
+                    .catch(function () {
+                    showToast('Click this for quick access WhatsApp Direct!');
+                });
+            });
+        });
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('scripts/build/sw.js')
+                .then(function (registration) {
+                registration.addEventListener('updatefound', function () {
+                    if (navigator.serviceWorker.controller) {
+                        var installingSW_1 = registration.installing;
+                        if (installingSW_1) {
+                            installingSW_1.onstatechange = function () {
+                                switch (installingSW_1.state) {
+                                    case 'installed':
+                                        showToast('Update available. Click this to reload.');
+                                        toastElement.addEventListener('click', function () {
+                                            hideToast();
+                                            window.location.reload();
+                                        });
+                                        break;
+                                }
+                            };
+                        }
+                    }
+                });
+            });
+        }
+    };
+});
+//# sourceMappingURL=sw-install.js.map

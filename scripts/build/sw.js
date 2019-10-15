@@ -1,1 +1,37 @@
-!function(e){if("object"==typeof module&&"object"==typeof module.exports){var t=e(require,exports);void 0!==t&&(module.exports=t)}else"function"==typeof define&&define.amd&&define(["require","exports"],e)}(function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n="?v202",i="whatsapp-direct"+n;self.addEventListener("install",function(e){var t=["index.html","css/style.css","scripts/build/sw-install.js","scripts/build/index.js"];e.waitUntil(caches.open(i).then(function(e){return e.addAll(t.map(function(e){return e+n}))}).then(function(){return self.skipWaiting()}))}),self.addEventListener("fetch",function(t){t.respondWith(caches.match(t.request).then(function(e){return e||fetch(t.request)}))}),self.addEventListener("activate",function(e){var t=[i];e.waitUntil(caches.keys().then(function(e){return Promise.all(e.filter(function(e){return t.includes(e)}).map(function(e){return caches.delete(e)}))}).then(function(){return self.clients.claim()}))})});
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports"], factory);
+    }
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var FILE_VERSION = '?v203';
+    var CACHE_NAME = 'whatsapp-direct' + FILE_VERSION;
+    self.addEventListener('install', function (e) {
+        var filesToCache = [
+            'index.html',
+            'css/style.css',
+            'scripts/build/sw-install.js',
+            'scripts/build/index.js',
+        ];
+        e.waitUntil(caches.open(CACHE_NAME)
+            .then(function (cache) { return cache.addAll(filesToCache.map(function (file) { return file + FILE_VERSION; })); })
+            .then(function () { return self.skipWaiting(); }));
+    });
+    self.addEventListener('fetch', function (e) {
+        e.respondWith(caches.match(e.request)
+            .then(function (response) { return response || fetch(e.request); }));
+    });
+    self.addEventListener('activate', function (e) {
+        var cacheKeeplist = [CACHE_NAME];
+        e.waitUntil(caches.keys()
+            .then(function (keyList) { return Promise.all(keyList.filter(function (key) { return cacheKeeplist.includes(key); })
+            .map(function (key) { return caches.delete(key); })); })
+            .then(function () { return self.clients.claim(); }));
+    });
+});
+//# sourceMappingURL=sw.js.map
