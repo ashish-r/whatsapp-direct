@@ -1,14 +1,5 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
+(function (require, exports) {
     "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
     window.onload = function () {
         'use strict';
         var toastElement = document.getElementById('snackbar');
@@ -23,7 +14,6 @@
             hideToast();
         });
         window.addEventListener('beforeinstallprompt', function (installPrompt) {
-            debugger;
             installPrompt.preventDefault();
             showToast('Click this for quick access WhatsApp Direct!');
             toastElement.addEventListener('click', function () {
@@ -41,7 +31,6 @@
             });
         });
         if ('serviceWorker' in navigator) {
-            debugger;
             navigator.serviceWorker.register('scripts/build/sw.js')
                 .then(function (registration) {
                 registration.addEventListener('updatefound', function () {
@@ -65,5 +54,4 @@
             });
         }
     };
-});
-//# sourceMappingURL=sw-install.js.map
+})()
