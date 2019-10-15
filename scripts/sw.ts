@@ -1,5 +1,5 @@
 import { ServiceWorkerEvent, ServiceWorkerGlobalContext } from "./types"
-const FILE_VERSION = '?v201'
+const FILE_VERSION = '?v202'
 const CACHE_NAME = 'whatsapp-direct' + FILE_VERSION
 
 /* Start the service worker and cache all of the app's content */
