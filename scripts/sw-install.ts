@@ -6,6 +6,7 @@ window.onload = function(){
     const showToast = (toastMessage: string) => {
         toastElement.innerText = toastMessage
         toastElement.className = 'show'
+        setTimeout(hideToast, 7000)
     }
     const hideToast = () => {
         toastElement.className = ''
