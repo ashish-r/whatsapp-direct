@@ -34,6 +34,7 @@ input, textarea {
 textarea {
   outline: none;
   border: none;
+  resize: none;
 }
 
 textarea:focus, input:focus {
