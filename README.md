@@ -1,3 +1,5 @@
+[![DeepScan grade](https://deepscan.io/api/teams/10012/projects/12697/branches/199343/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=10012&pid=12697&bid=199343)
+
 # whatsapp-direct
 An ultra-lite web app that lets you message/call on Whatsapp to people without adding them to the contact list.
 Demo: http://ashish-r.github.io/whatsapp-direct
