@@ -1,4 +1,4 @@
-const FILE_VERSION = '?v207'
+const FILE_VERSION = '?v208'
 const CACHE_NAME = 'whatsapp-direct' + FILE_VERSION
 
 /* Start the service worker and cache all of the app's content */
