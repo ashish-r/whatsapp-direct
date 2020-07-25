@@ -2,7 +2,7 @@
 
 # whatsapp-direct
 An ultra-lite web app that lets you message/call on Whatsapp to people without adding them to the contact list.
-Demo: http://ashish-r.github.io/whatsapp-direct
+Demo: https://whatsapp.ashish.link
 
 # Getting Started
 
