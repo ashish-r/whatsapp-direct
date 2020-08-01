@@ -1,13 +1,13 @@
-const FILE_VERSION = '@@version'
-const CACHE_NAME = 'whatsapp-direct' + FILE_VERSION
+var FILE_VERSION = ''
+var CACHE_NAME = 'whatsapp-direct' + FILE_VERSION
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function (e) {
-    const filesToCache = [
+    var filesToCache = [
         'index.html',
-        'build/css/style.css',
-        'build/scripts/sw-install.js',
-        'build/scripts/index.js',
+        'assets/css/style.css',
+        'assets/scripts/sw-install.js',
+        'assets/scripts/index.js'
     ]
     e.waitUntil(
         caches
@@ -16,12 +16,12 @@ self.addEventListener('install', function (e) {
                 return cache.addAll(
                     filesToCache.map(function (file) {
                         return file + FILE_VERSION
-                    }),
+                    })
                 )
             })
             .then(function () {
                 self.skipWaiting()
-            }),
+            })
     )
 })
 
@@ -30,7 +30,7 @@ self.addEventListener('fetch', function (e) {
     e.respondWith(
         caches.match(e.request).then(function (response) {
             return response || fetch(e.request)
-        }),
+        })
     )
 })
 
@@ -46,11 +46,11 @@ self.addEventListener('activate', function (e) {
                         })
                         .map(function (key) {
                             return caches.delete(key)
-                        }),
+                        })
                 )
             })
             .then(function () {
                 self.clients.claim()
-            }),
+            })
     )
 })
