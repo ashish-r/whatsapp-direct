@@ -5,8 +5,10 @@ module.exports = function (grunt) {
         uglify: {
             t1: {
                 files: {
-                    'build/scripts/index.js': ['assets/scripts/index.js'],
-                    'build/scripts/sw-install.js': [
+                    'build/assets/scripts/index.js': [
+                        'assets/scripts/index.js',
+                    ],
+                    'build/assets/scripts/sw-install.js': [
                         'assets/scripts/sw-install.js',
                     ],
                     'build/sw.js': ['build/sw.js'],
