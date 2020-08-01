@@ -1,4 +1,5 @@
-[![DeepScan grade](https://deepscan.io/api/teams/10012/projects/12697/branches/199343/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=10012&pid=12697&bid=199343)
+[![DeepScan grade](https://deepscan.io/api/teams/10012/projects/12697/branches/199343/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=10012&pid=12697&bid=199343) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ashish-r/whatsapp-direct/blob/master/LICENSE)
 
 # WhatsAppDirect!
 
