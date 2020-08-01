@@ -1,42 +1,47 @@
 {
-  "name": "whatsapp-direct",
-  "version": "1.0.0",
-  "description": "WhatsApp directly without saving contact!",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "tsc --w",
-    "build": "tsc && grunt uglify:t1 && echo \"TS files transpiled to JS and minified\"",
-    "build-add": "tsc && grunt uglify:t1 && git add scripts/build/ && echo \"TS files transpiled to JS, minified and added for commit\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ashish-r/whatsapp-direct.git"
-  },
-  "keywords": [
-    "pwa",
-    "js",
-    "ts",
-    "whatsapp",
-    "whatsapp-direct"
-  ],
-  "author": "Ashish Ranjan",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ashish-r/whatsapp-direct/issues"
-  },
-  "homepage": "https://whatsapp.ashish.link",
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-uglify": "^4.0.1",
-    "pre-commit": "^1.2.2",
-    "typescript": "^3.6.4"
-  },
-  "dependencies": {},
-  "gitHooks": {
-    "pre-commit": "pre-commit"
-  },
-  "pre-commit": [
-    "build-add"
-  ]
+    "name": "whatsapp-direct",
+    "version": "1.0.0",
+    "description": "WhatsApp directly without saving contact!",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "serve": "tsc --w",
+        "serve-sass": "sass --watch css:build/css",
+        "build": "tsc && echo \"TS files transpiled to JS\" && sass css:build/css && echo \"sass files converted to css\" && grunt && echo \"JS and css files minified\"",
+        "prettier-add": "prettier --write . && git add ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ashish-r/whatsapp-direct.git"
+    },
+    "keywords": [
+        "pwa",
+        "js",
+        "ts",
+        "whatsapp",
+        "whatsapp-direct"
+    ],
+    "author": "Ashish Ranjan",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ashish-r/whatsapp-direct/issues"
+    },
+    "homepage": "https://whatsapp.ashish.link",
+    "devDependencies": {
+        "grunt": "^1.0.4",
+        "grunt-contrib-cssmin": "^3.0.0",
+        "grunt-contrib-uglify": "^4.0.1",
+        "grunt-replace": "^1.0.1",
+        "pre-commit": "^1.2.2",
+        "prettier": "2.0.5",
+        "sass": "^1.26.10",
+        "typescript": "^3.6.4"
+    },
+    "dependencies": {},
+    "gitHooks": {
+        "pre-commit": "pre-commit"
+    },
+    "pre-commit": [
+        "prettier-add"
+    ]
 }

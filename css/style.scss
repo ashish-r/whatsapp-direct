@@ -1,0 +1,260 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: monospace, sans-serif;
+}
+
+a {
+    margin: 0px;
+    transition: all 0.4s;
+    text-decoration: none;
+    &:focus {
+        outline: none !important;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+input,
+textarea {
+    outline: none;
+    border: none;
+    &:focus {
+        border-color: transparent !important;
+    }
+}
+
+textarea {
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+
+.fullscreen {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    background-color: #fff;
+}
+
+.wrapper {
+    z-index: 1;
+    min-height: 90vh;
+    width: 500px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrapper {
+    width: 100%;
+    position: relative;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 170px;
+    height: 100%;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #26d367;
+    padding-top: 50px;
+    padding-bottom: 39px;
+}
+
+.input-wrapper {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 27px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-field {
+    font-family: monospace;
+    font-size: 15px;
+    color: #1b3815;
+    line-height: 1.2;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 55px;
+    background: #ebebeb;
+    border-radius: 27px;
+    padding: 0 35px;
+}
+
+.input-field-sep {
+    border-left: 1px solid #999999;
+}
+.input-field--message {
+    height: 105px;
+    padding: 15px 35px;
+}
+.input-field--code {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    flex: 1;
+    padding-right: 5px;
+}
+.input-field--mobile {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    flex: 5;
+    padding-left: 10px;
+}
+.input-error {
+    color: #c80000;
+    font-size: 13px;
+    line-height: 1.4;
+    position: absolute;
+    bottom: -18px;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+
+.chat-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #26d367;
+    border-radius: 25px;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    transition: all 0.4s;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.footer {
+    position: absolute;
+    bottom: 6vh;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.credit-container {
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 9px;
+    color: #999999;
+}
+
+.credit-text--name {
+    font-size: 9px;
+    color: #26d367;
+    text-transform: uppercase;
+}
+
+.info-text {
+    font-size: 12px;
+    color: #999999;
+    padding-bottom: 5px;
+}
+.info-text--link {
+    color: #26d367;
+    text-transform: uppercase;
+    font-size: 9px;
+    cursor: pointer;
+}
+
+#snackbar {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    font-size: 12px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: -20px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media (max-height: 550px) {
+    .credit-container,
+    .footer {
+        display: none;
+    }
+}
