@@ -21,12 +21,11 @@ Navigate to the root directory and use: <br/>
 
 ## For Production:
 
-`npm run build` this will transpile all .ts files in a corresponding .js file and then grunt will minify those files.<br/>
-Push updated contents of build directory also Github serves the page from that directory only.
+`npm run build` this will copy all the required files to the build directory and minifies assets with grunt.
 
 ## Git Hooks:
 
-`pre-commit` runs `npm run build-add` which is similar to `npm run build` and also adds updated contents of scripts/build directory automatically while making a commit.
+`pre-commit` runs `npm run deploy` which builds the project with `npm run build` and push updates in `gh-pages` branch.
 
 # Screenshots
 
