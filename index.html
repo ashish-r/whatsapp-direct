@@ -96,6 +96,10 @@
         <link rel="stylesheet" href="assets/css/style.css" />
         <script defer src="assets/scripts/index.js"></script>
         <script defer src="assets/scripts/sw-install.js"></script>
+        <script
+            defer
+            src="https://cdn.rawgit.com/neocotic/qrious/master/dist/qrious.min.js"
+        ></script>
     </head>
     <body>
         <div class="fullscreen">
@@ -135,6 +139,16 @@
                             <button class="chat-btn" id="start_whatsapp">
                                 Start Chat
                             </button>
+                        </div>
+                    </div>
+                    <div id="qr-wrapper" class="qr-wrapper hide">
+                        <canvas id="qr"></canvas>
+                        <div>
+                            <span class="info-text">
+                                WhatsApp is not available on this device.
+                                <br />Scan the QR code from your phone to
+                                continue.
+                            </span>
                         </div>
                     </div>
                     <div class="footer">

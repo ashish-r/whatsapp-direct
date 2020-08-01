@@ -228,11 +228,17 @@ button {
     font-size: 12px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    &.show {
+        visibility: visible;
+        animation: fadein 0.5s;
+    }
 }
-
-#snackbar.show {
-    visibility: visible;
-    animation: fadein 0.5s;
+.hide {
+    display: none;
+}
+.qr-wrapper {
+    text-align: center;
+    padding-top: 20px;
 }
 
 @keyframes fadein {

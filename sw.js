@@ -16,7 +16,7 @@ self.addEventListener('install', function (e) {
                 return cache.addAll(
                     filesToCache.map(function (file) {
                         return file + FILE_VERSION
-                    })
+                    }).concat('https://cdn.rawgit.com/neocotic/qrious/master/dist/qrious.min.js')
                 )
             })
             .then(function () {

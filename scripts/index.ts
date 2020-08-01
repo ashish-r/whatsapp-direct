@@ -8,10 +8,14 @@
     const mobileNumberInput = document.getElementById(
         'mobile_number',
     ) as HTMLInputElement
+    const isDesktop = !navigator.userAgent.match(/(android|iphone|ipad)/gi)
+    const qrWrapperContainer =
+        isDesktop && document.getElementById('qr-wrapper')
     let currentCountryCode: string
     countryCodeInput.addEventListener('focus', () => {
         currentCountryCode = countryCodeInput.value
         mobileErrorElement.innerText = ''
+        qrWrapperContainer && qrWrapperContainer.classList.add('hide')
     })
     countryCodeInput.addEventListener('blur', () => {
         if (!countryCodeInput.value) {
@@ -20,6 +24,7 @@
     })
     mobileNumberInput.addEventListener('focus', () => {
         mobileErrorElement.innerText = ''
+        qrWrapperContainer && qrWrapperContainer.classList.add('hide')
     })
     ;(document.getElementById(
         'start_whatsapp',
@@ -39,10 +44,17 @@
             (document.getElementById('text_message') as HTMLInputElement)
                 .value || '',
         )
-        window.open(
-            `https://wa.me/${filteredCountryCode}${filteredNumber}?text=${textMessage}`,
-            '_blank',
-        )
+        const link = `https://wa.me/${filteredCountryCode}${filteredNumber}?text=${textMessage}`
+
+        if (isDesktop) {
+            qrWrapperContainer && qrWrapperContainer.classList.remove('hide')
+            new (window as any).QRious({
+                element: document.getElementById('qr'),
+                value: link,
+            })
+        } else {
+            window.open(link, '_blank')
+        }
     })
     ;(document.getElementById(
         'facebook_share',
