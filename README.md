@@ -32,6 +32,7 @@ Navigate to the root directory and use: <br/>
 ![PWA Mobile][pwa mobile]
 ![PWA Update][pwa update]
 ![PWA Desktop][pwa desktop]
+![qrcode desktop][qrcode desktop]
 
 [pwa mobile]: https://github.com/ashish-r/whatsapp-direct/blob/master/screenshots/Screenshot_20191011-042640.jpeg
 [pwa update]: https://github.com/ashish-r/whatsapp-direct/blob/master/screenshots/Screenshot_20191011-042616.jpeg
