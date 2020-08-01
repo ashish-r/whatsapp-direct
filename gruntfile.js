@@ -46,7 +46,12 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: '.',
-                        src: ['manifest.json', 'browserconfig.xml', 'images/*'],
+                        src: [
+                            'manifest.json',
+                            'browserconfig.xml',
+                            'CNAME',
+                            'images/*',
+                        ],
                         dest: 'build/',
                     },
                 ],
