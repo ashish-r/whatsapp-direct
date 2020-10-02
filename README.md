@@ -3,7 +3,7 @@
 
 # WhatsAppDirect!
 
-An ultra-lite web app that lets you message/call on #WhatsApp without adding them to your contact list.<br/>
+An ultra-lite web app that lets you message/call on #WhatsApp without adding the number to your contact list.<br/>
 ### Visit: https://whatsapp.ashish.link
 
 # Getting Started
