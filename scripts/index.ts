@@ -8,22 +8,29 @@
     const mobileNumberInput = document.getElementById(
         'mobile_number',
     ) as HTMLInputElement
+    const textMessageInput = document.getElementById(
+        'text_message',
+    ) as HTMLInputElement
+    const qrContainerElement = document.getElementById('qr') as HTMLElement
     const isDesktop = !navigator.userAgent.match(/(android|iphone|ipad)/gi)
     const qrWrapperContainer =
         isDesktop && document.getElementById('qr-wrapper')
     let currentCountryCode: string
-    countryCodeInput.addEventListener('focus', () => {
-        currentCountryCode = countryCodeInput.value
-        mobileErrorElement.innerText = ''
-        qrWrapperContainer && qrWrapperContainer.classList.add('hide')
-    })
     countryCodeInput.addEventListener('blur', () => {
         if (!countryCodeInput.value) {
             countryCodeInput.value = currentCountryCode
         }
     })
+    countryCodeInput.addEventListener('focus', () => {
+        currentCountryCode = countryCodeInput.value
+        mobileErrorElement.innerText = ''
+        qrWrapperContainer && qrWrapperContainer.classList.add('hide')
+    })
     mobileNumberInput.addEventListener('focus', () => {
         mobileErrorElement.innerText = ''
+        qrWrapperContainer && qrWrapperContainer.classList.add('hide')
+    })
+    textMessageInput.addEventListener('focus', () => {
         qrWrapperContainer && qrWrapperContainer.classList.add('hide')
     })
     ;(document.getElementById(
@@ -40,21 +47,18 @@
                 !filteredNumber ? 'mobile number' : 'country code'
             }`)
         }
-        const textMessage = encodeURIComponent(
-            (document.getElementById('text_message') as HTMLInputElement)
-                .value || '',
-        )
-        const link = `https://wa.me/${filteredCountryCode}${filteredNumber}?text=${textMessage}`
+        const textMessage = encodeURIComponent(textMessageInput.value || '')
+        let link = `https://wa.me/${filteredCountryCode}${filteredNumber}?text=${textMessage}`
 
         if (isDesktop) {
             qrWrapperContainer && qrWrapperContainer.classList.remove('hide')
             new (window as any).QRious({
-                element: document.getElementById('qr'),
+                element: qrContainerElement,
                 value: link,
             })
-        } else {
-            window.open(link, '_blank')
+            link = `https://web.whatsapp.com/send?phone=${filteredCountryCode}${filteredNumber}&text=${textMessage}`
         }
+        window.open(link, '_blank')
     })
     ;(document.getElementById(
         'facebook_share',
