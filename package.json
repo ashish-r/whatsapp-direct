@@ -1,6 +1,6 @@
 {
     "name": "whatsapp-direct",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "WhatsApp directly without saving contact!",
     "main": "index.js",
     "scripts": {
@@ -47,6 +47,7 @@
         "pre-commit": "pre-commit"
     },
     "pre-commit": [
+        "prettier-add",
         "deploy"
     ]
 }
